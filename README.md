@@ -1,8 +1,19 @@
-# travel
+# trip
 
-> 这是慕课网去哪儿课程项目代码
+> A Vue.js project
 
-# 下面是本人的简历网页
+## Build Setup
 
->  [www.shuai1021.com](http://www.shuai1021.com)
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 
