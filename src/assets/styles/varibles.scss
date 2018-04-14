@@ -1,0 +1,11 @@
+$bgColor:#759FF2;
+$darkTextColor:#333;
+$headerHeight:.86rem;
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin boxShadow($Color){
+    box-shadow: 0px 1px 3px rgba($Color,.5);
+}
