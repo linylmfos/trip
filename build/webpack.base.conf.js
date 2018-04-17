@@ -8,7 +8,16 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-const createLintingRule = () => ({})
+const createLintingRule = () => ({
+  test: /\.(js|vue)$/,
+  loader: 'eslint-loader',
+  enforce: 'pre',
+  include: [resolve('src'), resolve('test')],
+  options: {
+    formatter: require('eslint-friendly-formatter'),
+    emitWarning: !config.dev.showEslintErrorsInOverlay
+  }
+})
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -28,6 +37,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       'styles': resolve('src/assets/styles'),
+      'common': resolve('src/common'),
     }
   },
   module: {
@@ -58,10 +68,6 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('media/[name].[hash:7].[ext]')
         }
-      },
-      {
-       test: /\.scss$/,
-       loaders: ["style", "css", "sass"]
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
