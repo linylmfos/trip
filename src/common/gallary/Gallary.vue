@@ -35,7 +35,6 @@ export default {
       }
     }
   },
-  
   methods: {
     handleGallaryClick () {
       this.$emit('close')
